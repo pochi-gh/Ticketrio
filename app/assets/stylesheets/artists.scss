@@ -31,6 +31,7 @@
   height: calc(100vh - 100px);
   width: 100vw;
   background-color: lightskyblue;
+  display: flex;
   &__side_bar{
     height: 100%;
     width: 300px;
@@ -48,11 +49,118 @@
         border-radius: 5px;
       }
     }
-    &live_info{}
+    &__result{
+      &--name{
+        padding-left:40px;
+        height: 30px;
+        width: 260px;
+        background-color: #f5f5f5;
+        font-size: 14px;
+        line-height: 30px;
+      }
+    }
+    &__main{
+      &__artist_name{
+        padding:20px 40px;
+      }
+      &__live{
+        &__box{
+          font-size: 14px;
+          padding: 20px 0 20px 40px;
+          &--upper{
+            &__title{
+            }
+          }
+          &--middle{
+            display: flex;
+            font-size: 12px;
+            margin: 2px 0 ;
+            &__date{
+            }
+            &__time{
+              padding-left: 10px;
+            }
+          }
+          &--lower{
+            display: flex;
+            font-size: 12px;
+            &__prefectures{
+
+            }
+            &__hall{
+              padding-left: 10px;
+            }
+          }
+        }
+      }
+    }
   }
-
   &__main{
-
+    width: calc(100% - 300px);
+    background-color: lightcyan;
+    padding-top: 100px;
+    &__box{
+      width:700px;
+      height: 180px;
+      background-color: lightskyblue;
+      font-size: 14px;
+      margin: 0 auto;
+      padding: 10px;
+      border: 1px solid rgb(8, 8, 8);
+      &--user-info{
+        display: flex;
+        height: 20px;
+        line-height: 20px;
+        border-bottom: 1px solid rgb(8, 8, 8);
+        &--time{
+        }
+        &--user-name{
+        }
+      }
+      &--artist-info{
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        height: 20px;
+        line-height: 20px;
+        &--title{
+        }
+        &--name{
+        }
+      }
+      &--live-info{
+        display: flex;
+        margin-top: 10px;
+        height: 20px;
+        line-height: 20px;
+        &-date{
+        }
+        &-time{
+        }
+        &-prefecture{
+          margin-left: 20px;
+        }
+        &-hall{
+          margin-left: 20px;
+        }
+      }
+      &--seat{
+        display: flex;
+        margin-top: 10px;
+        height: 20px;
+        line-height: 20px;
+        &-area{
+        }
+        &-num{
+        }
+        &-price{
+        }
+      }
+      &--comment{
+        border-top: 1px solid rgb(8, 8, 8);
+        height: 60px;
+      }
+    }
   }
 }
   
