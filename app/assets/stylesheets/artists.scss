@@ -101,28 +101,39 @@
     padding-top: 100px;
     &__box{
       width:700px;
-      height: 180px;
+      height: 150px;
       background-color: lightskyblue;
       font-size: 14px;
       margin: 0 auto;
-      padding: 10px;
-      border: 1px solid rgb(8, 8, 8);
+      border-left: 0.5px solid rgb(8, 8, 8);
+      border-right: 0.5px solid rgb(8, 8, 8);
+      border-bottom: 0.5px solid rgb(8, 8, 8);
+        tr{
+          border-top: 0.5px solid rgb(8, 8, 8);
+          height: 30px;
+          line-height: 30px;
+          th{
+            font-weight: bold;
+            margin: 0 10px;
+            td{
+            }
+          }
+        }
       &--user-info{
         display: flex;
-        height: 20px;
-        line-height: 20px;
-        border-bottom: 1px solid rgb(8, 8, 8);
-        &--time{
+        &--time-title{
         }
-        &--user-name{
+        &--time-data{
+        }
+        &--user-name-title{
+          padding-left: 50px;
+        }
+        &--user-name-data{
         }
       }
       &--artist-info{
-        margin-top: 10px;
+
         display: flex;
-        justify-content: space-between;
-        height: 20px;
-        line-height: 20px;
         &--title{
         }
         &--name{
@@ -130,35 +141,47 @@
       }
       &--live-info{
         display: flex;
-        margin-top: 10px;
-        height: 20px;
-        line-height: 20px;
-        &-date{
+        &-date-title{
+          &-date{
+            border-right: 1px solid rgb(8, 8, 8);
+            padding-right: 20px;
+          }
+          &-time{
+          }
         }
-        &-time{
-        }
-        &-prefecture{
-          margin-left: 20px;
-        }
-        &-hall{
-          margin-left: 20px;
+        &__stage{
+          padding-left: 40px;
+          &__prefecture{
+            
+          }
+          &__hall{
+            padding-left: 20px;
+          }
         }
       }
       &--seat{
         display: flex;
-        margin-top: 10px;
-        height: 20px;
-        line-height: 20px;
+        // margin-top: 10px;
+        // height: 20px;
+        // line-height: 20px;
         &-area{
+          &-data{
+          }
         }
         &-num{
+          padding-left: 20px;
+          &-data{
+          }
         }
         &-price{
+          padding-left: 20px;
+          &-data{
+          }
         }
       }
       &--comment{
         border-top: 1px solid rgb(8, 8, 8);
-        height: 60px;
+        padding-left: 10px;
       }
     }
   }
