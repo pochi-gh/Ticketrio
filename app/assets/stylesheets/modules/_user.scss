@@ -1,0 +1,84 @@
+.sign_up__wrapper{
+  width: 100vw;
+  background-color: lightskyblue;
+  padding-top: 100px;
+  height: 650px;
+  &__form_area{
+    h2{
+      font-size: 20px;
+      width: 100%;
+      text-align: center;
+      font-weight: bold;
+      letter-spacing: 20px;
+      padding-bottom: 50px;
+    }
+    height: 500px;
+    width: 600px;
+    background-color: lightyellow;
+    margin: 0 auto;
+    .new_user{
+      height: 300px;
+      background-color: lightsalmon;
+      text-align: center;
+      .field{
+        padding: 10px 0 ;
+      }
+      label{
+       font-weight: bold;
+      }
+      input{
+      width: 300px;
+      }
+      .actions{
+        padding-top: 80px;
+        .btn{
+          width: 150px;
+        }
+      }
+    }
+  }
+}
+
+.login__wrapper{
+  width: 100vw;
+  background-color: lightskyblue;
+  padding-top: 100px;
+  height: 650px;
+  &__form_area{
+    h2{
+      font-size: 20px;
+      width: 100%;
+      text-align: center;
+      font-weight: bold;
+      letter-spacing: 20px;
+      padding-bottom: 50px;
+    }
+    height: 500px;
+    width: 600px;
+    background-color: lightyellow;
+    margin: 0 auto;
+    .new_user{
+      height: 300px;
+      background-color: lightsalmon;
+      text-align: center;
+      .field{
+        padding: 10px 0 ;
+      }
+      label{
+       font-weight: bold;
+      }
+      input{
+      width: 300px;
+      }
+      .remember_label{
+        width: 10px;
+      }
+      .actions{
+        padding-top: 40px;
+        .btn{
+          width: 150px;
+        }
+      }
+    }
+  }
+}
