@@ -10,6 +10,7 @@
       チケット交換 募集
   .header__user
     チロ太郎
+    = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
 .wrapper
   .wrapper__side_bar
     .wrapper__side_bar__search
