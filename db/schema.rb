@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_03_052843) do
+ActiveRecord::Schema.define(version: 2020_08_04_064312) do
+
+  create_table "artist_lives", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "artist_id"
+    t.bigint "live_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["artist_id"], name: "index_artist_lives_on_artist_id"
+    t.index ["live_id"], name: "index_artist_lives_on_live_id"
+  end
 
   create_table "artists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -18,4 +27,16 @@ ActiveRecord::Schema.define(version: 2020_08_03_052843) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "lives", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title", null: false
+    t.date "data", null: false
+    t.time "time", null: false
+    t.integer "prefecture_id", null: false
+    t.string "hall", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "artist_lives", "artists"
+  add_foreign_key "artist_lives", "lives", column: "live_id"
 end
