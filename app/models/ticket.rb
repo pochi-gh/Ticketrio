@@ -1,4 +1,4 @@
 class Ticket < ApplicationRecord
-  has_many :lives
-  has_many :users
+  belongs_to :live
+  belongs_to :user
 end
