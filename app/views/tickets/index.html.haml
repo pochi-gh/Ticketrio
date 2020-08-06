@@ -74,7 +74,7 @@
           %th.wrapper__main__box--user-info--time-title
             投稿日 
           %td.wrapper__main__box--user-info--time-data
-            = ticket.created_at
+            = ticket.created_at.to_s(:datetime_jp)
           %th.wrapper__main__box--user-info--user-name-title
             投稿者 
           %td.wrapper__main__box--user-info--user-name-data
@@ -88,9 +88,9 @@
           %th.wrapper__main__box--live-info-date-title
             公演日時
             %td.wrapper__main__box--live-info-date-title-data
-              = ticket.live.data
+              = ticket.live.data.strftime("%Y/%m/%d")
             %td.wrapper__main__box--live-info-date-title-time
-              = ticket.live.time
+              = ticket.live.time.to_s(:time_jp)
           %th.wrapper__main__box--live-info__stage
             会場
             %td.wrapper__main__box--live-info__stage__prefecture
