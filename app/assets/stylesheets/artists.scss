@@ -175,8 +175,10 @@
         display: flex;
         
         &-area{
+
           &-data{
-            margin-right: 50px;
+            width: 195px;
+            text-align: left;
           }
         }
         &-num{
