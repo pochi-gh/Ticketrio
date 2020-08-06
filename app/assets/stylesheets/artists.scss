@@ -104,7 +104,7 @@
       height: 150px;
       background-color: lightskyblue;
       font-size: 14px;
-      margin: 0 auto;
+      margin: 0 auto 50px;
       border-left: 0.5px solid rgb(8, 8, 8);
       border-right: 0.5px solid rgb(8, 8, 8);
       border-bottom: 0.5px solid rgb(8, 8, 8);
@@ -115,8 +115,9 @@
           th{
             font-weight: bold;
             margin: 0 10px;
-            td{
-            }
+          }
+          td{
+            font-size: 14px;
           }
         }
       &--user-info{
@@ -132,7 +133,6 @@
         }
       }
       &--artist-info{
-
         display: flex;
         &--title{
         }
@@ -144,9 +144,10 @@
         &-date-title{
           &-date{
             border-right: 1px solid rgb(8, 8, 8);
-            padding-right: 20px;
+            
           }
           &-time{
+            padding-left: 20px;
           }
         }
         &__stage{
@@ -161,11 +162,10 @@
       }
       &--seat{
         display: flex;
-        // margin-top: 10px;
-        // height: 20px;
-        // line-height: 20px;
+        
         &-area{
           &-data{
+            margin-right: 50px;
           }
         }
         &-num{
