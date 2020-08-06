@@ -1,6 +1,6 @@
 class Live < ApplicationRecord
-  has_many :artist_lives
-  has_many :artists, through: :artist_lives
+  has_many :artists, through: :artist_concerts
+  has_many :artist_concerts
   has_many :tickets
 
   extend ActiveHash::Associations::ActiveRecordExtensions

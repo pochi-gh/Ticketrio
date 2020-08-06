@@ -1,4 +1,5 @@
 class Artist < ApplicationRecord
-  has_many :artist_lives
-  has_many :live, through: :artist_lives
+  has_many :lives, through: :artist_concerts
+  has_many :artist_concerts
+  
 end
