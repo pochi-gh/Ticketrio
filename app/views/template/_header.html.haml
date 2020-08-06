@@ -1,0 +1,16 @@
+.header
+  .header__logo
+    Ticketrio
+  %ul.header__contents
+    %li.header__contents__accompany
+      同伴者募集
+    %li.header__contents__transfer
+      チケット譲渡 募集
+    %li.header__contents__chenge
+      チケット交換 募集
+  .header__user
+    -if user_signed_in?
+      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
+    -else 
+      = link_to "新規登録", new_user_session_path, method: :delete, class: 'btn'
+      = link_to "ログイン", new_user_registration_path, method: :delete, class: 'btn'
