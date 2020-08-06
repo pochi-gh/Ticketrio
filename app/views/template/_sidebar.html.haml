@@ -9,7 +9,7 @@
     .wrapper__side_bar__main__live
     - @artist.artist_concerts.each do |artist_concert|
       .wrapper__side_bar__main__live__box
-        =link_to "", tickets_path
+        =link_to "", tickets_path(artist_id: artist_concert.artist_id, live_id: artist_concert.live_id)
         .wrapper__side_bar__main__live__box--upper
           .wrapper__side_bar__main__live__box--upper__title
             = artist_concert.live.title
