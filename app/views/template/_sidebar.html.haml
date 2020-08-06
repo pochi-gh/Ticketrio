@@ -2,17 +2,17 @@
   .wrapper__side_bar__search
     %input.wrapper__side_bar__search--area
   .wrapper__side_bar__result
-    =link_to "三月のパンタシア", lives_path, class:".wrapper__side_bar__result--name"
+    =link_to "三月のパンタシア", lives_path, class:"wrapper__side_bar__result--name"
   .wrapper__side_bar__main
     .wrapper__side_bar__main__artist_name
       = @artist.artist_name
     .wrapper__side_bar__main__live
     - @artist.artist_concerts.each do |artist_concert|
-      =link_to "", class:"link"
       .wrapper__side_bar__main__live__box
+        =link_to "", tickets_path
         .wrapper__side_bar__main__live__box--upper
-          -# =link_to "秋はやっぱり、パン祭り！！", tickets_path,class:".wrapper__side_bar__main__live__box--upper__title"
-          = artist_concert.live.title
+          .wrapper__side_bar__main__live__box--upper__title
+            = artist_concert.live.title
         .wrapper__side_bar__main__live__box--middle
           .wrapper__side_bar__main__live__box--middle__date
             = artist_concert.live.data.strftime("%Y/%m/%d")

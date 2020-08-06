@@ -67,8 +67,19 @@
         &__box{
           font-size: 14px;
           padding: 20px 0 20px 40px;
+          width: 200px;
+          position: relative;
+          a{
+            position:absolute;
+            top: 0;
+            left: 40;
+            width: 200px;
+            height: 100%;
+  
+          }
           &--upper{
             &__title{
+              
             }
           }
           &--middle{
