@@ -2,6 +2,6 @@
 .wrapper
   .wrapper__side_bar
     #wrapper__side_bar__search
-      %input.wrapper__side_bar__search--area
+      %input.wrapper__side_bar__search--area{:placeholder => "アーティスト名を入力", :type => "text"}
     .wrapper__side_bar__result
-      =link_to @artist.artist_name, lives_path(id: @artist.id), class:"wrapper__side_bar__result--name"
+      -# =link_to @artist.artist_name, lives_path(id: @artist.id), class:"wrapper__side_bar__result--name"
