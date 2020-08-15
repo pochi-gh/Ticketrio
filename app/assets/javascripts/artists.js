@@ -15,9 +15,9 @@ $(function() {
     return nodata ;
   }
 
-  $(".wrapper__side_bar__search--area").on("keyup", function(e) {
-    e.preventDefault();
+  $(document).on("keyup",".wrapper__side_bar__search--area", function() {
     let input = $(this).val();
+    console.log(input)
     $.ajax({
       type: "GET",
       url: "/artists",
