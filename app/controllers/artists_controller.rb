@@ -7,4 +7,8 @@ class ArtistsController < ApplicationController
       format.json 
     end
   end
+
+  def new
+    @artist=Artist.new
+  end
 end
