@@ -1,0 +1,7 @@
+=render "template/header"
+.wrapper
+  .wrapper__side_bar
+    .wrapper__side_bar__search
+      = form_with model: @artist  do |form|
+        = form.text_field :artist_name, class:".wrapper__side_bar__search--area"
+        = form.submit
