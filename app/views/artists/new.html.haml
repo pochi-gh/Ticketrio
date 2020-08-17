@@ -1,0 +1,10 @@
+=render "template/header"
+.wrapper
+  .wrapper__side_bar
+    .wrapper__side_bar__search
+      = form_with model: @artist  do |form|
+        - if @artist.errors.any?
+          %p エラーでーす。
+        = form.text_field :artist_name, class:".wrapper__side_bar__add"
+        = form.submit
+    

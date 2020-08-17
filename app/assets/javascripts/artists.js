@@ -11,6 +11,7 @@ $(function() {
     var nodata =
     `<div class="wrapper__side_bar__result--nodata">
      <p>該当するアーティストが見つかりません</p>
+     <a class="wrapper__side_bar__result--artist--name" href="/artists/new">追加画面へ</a>
     </div>`
     return nodata ;
   }
