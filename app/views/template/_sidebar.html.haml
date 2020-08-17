@@ -6,7 +6,8 @@
     .wrapper__side_bar__main__artist_name
       = @artist.artist_name
       %span 
-        =link_to "liveの追加", new_life_path(id:@artist.id)
+        -if user_signed_in?
+          =link_to "liveの追加", new_life_path(id:@artist.id)
     .wrapper__side_bar__main__live
     - @artist.artist_concerts.each do |artist_concert|
       .wrapper__side_bar__main__live__box
