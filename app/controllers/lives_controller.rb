@@ -14,7 +14,7 @@ class LivesController < ApplicationController
     if @live.save
       @concert = ArtistConcert.new(artist_id: artist_only_params[:artist_id], live_id: @live.id)
       @concert.save
-      redirect_to "/artists"
+      redirect_to "/lives?id=#{artist_only_params[:artist_id]}"
 
     else
       render :new
