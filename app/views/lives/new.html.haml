@@ -3,10 +3,11 @@
   .wrapper__side_bar
     .wrapper__side_bar__search
       = form_with model: @live, class:'.wrapper__side_bar__add'  do |form|
-        
-        = form.text_field :title,placeholder:"公演名を入力"
+        = @artist.artist_name
+        = form.text_field :title, placeholder:"公演名を入力"
         = form.date_select :data, use_month_numbers: true
-        = form.time_select :time
+        = form.time_select :time, ignore_data:true
         = form.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "---", class: 'select_prefecture'
         = form.text_field :hall
+        = form.hidden_field :artist_id, value: @artist.id
         = form.submit
