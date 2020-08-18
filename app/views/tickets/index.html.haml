@@ -2,6 +2,7 @@
 .wrapper
   =render "template/sidebar"
   .wrapper__main
+    = link_to "募集投稿",new_ticket_path
     - @tickets.each do |ticket|
       %table.wrapper__main__box
         %tr.wrapper__main__box--user-info

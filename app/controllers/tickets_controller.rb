@@ -5,6 +5,8 @@ class TicketsController < ApplicationController
     @artist = Artist.find(artist_params[:artist_id])
   end
 
+  def new
+  end
   private
     def artist_params
       params.permit(:artist_id,:live_id)
