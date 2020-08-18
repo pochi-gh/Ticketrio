@@ -12,7 +12,12 @@ class TicketsController < ApplicationController
   end
 
   def create
-    binding.pry
+    @ticket = Ticket.new(ticket_params)
+    if @ticket.save
+      redirect_to "/artists"
+    else
+      render :new
+    end
   end
   private
     def artist_params
