@@ -6,6 +6,8 @@ class TicketsController < ApplicationController
   end
 
   def new
+    @artist = Artist.find(artist_params[:artist_id])
+    @live = Live.find(artist_params[:live_id])
   end
   private
     def artist_params
