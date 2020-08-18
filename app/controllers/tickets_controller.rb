@@ -10,9 +10,16 @@ class TicketsController < ApplicationController
     @live = Live.find(artist_params[:live_id])
     @ticket = Ticket.new
   end
+
+  def create
+    binding.pry
+  end
   private
     def artist_params
       params.permit(:artist_id,:live_id)
     end
 
+    def ticket_params
+      params.require(:ticket).permit(:seat, :piece, :text, :price, :live_id).merge(user_id: current_user.id)
+    end
 end
