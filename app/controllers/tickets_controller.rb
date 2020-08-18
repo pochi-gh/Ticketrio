@@ -8,6 +8,7 @@ class TicketsController < ApplicationController
   def new
     @artist = Artist.find(artist_params[:artist_id])
     @live = Live.find(artist_params[:live_id])
+    @ticket = Tikect.new
   end
   private
     def artist_params
