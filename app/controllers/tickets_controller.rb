@@ -20,6 +20,11 @@ class TicketsController < ApplicationController
       render :new
     end
   end
+
+  def show
+  end
+
+
   private
     def artist_live_params
       params.permit(:artist_id,:live_id)
