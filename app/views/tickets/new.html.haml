@@ -15,4 +15,5 @@
       = form.number_field :price, min:0, placeholder:"手数料を込めた金額"
       = form.hidden_field :live_id, value: @live.id
       = form.hidden_field :user_id, value: current_user.id
+      = form.hidden_field :artist_id, value: @artist.id
       = form.submit
