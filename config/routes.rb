@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root 'homes#index'
   resources :homes
   resources :artists
-  resources :tickets
+  resources :tickets do 
+    resources :comments
+  end
+
   resources :lives
 end
