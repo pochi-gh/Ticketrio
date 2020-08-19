@@ -1,0 +1,19 @@
+=render "template/header"
+.wrapper
+  =render "template/sidebar"
+  .tikect_new__wrapper
+    = @artist.artist_name
+    = @live.title
+    = @live.data.strftime("%Y/%m/%d")
+    = @live.time.to_s(:time_jp)
+    = @live.prefecture.name
+    = @live.hall
+    = form_with model: @ticket ,class:"tikect_new__wrapper__form_area" do |form|
+      = form.text_field :seat, placeholder:"座席詳細を入力"
+      = form.number_field :piece, min:0, placeholder:"チケット枚数"
+      = form.text_field :text, placeholder:"詳細情報を入力"
+      = form.number_field :price, min:0, placeholder:"手数料を込めた金額"
+      = form.hidden_field :live_id, value: @live.id
+      = form.hidden_field :user_id, value: current_user.id
+      = form.hidden_field :artist_id, value: @artist.id
+      = form.submit
