@@ -58,6 +58,10 @@
               2020/01/01 11:11
           %p.wrapper__show__comments__area--box__text
             なんでやねん
+        = form_with(model: [@ticket, @commnet], local: true) do |form|
+          = form.text_field :text, placeholder:"コメントの入力"
+          = form.hidden_field :ticket_id, value: @ticket.id
+          = form.submit
          
         
 

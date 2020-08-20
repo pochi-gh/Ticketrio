@@ -24,8 +24,11 @@ class TicketsController < ApplicationController
   def show
     @ticket = Ticket.find(params[:id])
     @live = Live.find(@ticket.live.id)
+    @commnet = Comment.new
+    @comments = @ticket.comments.includes(:user)
   end
 
+  
 
   private
     def artist_live_params
