@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   resources :tickets do 
     resources :comments
   end
-
+  resources :users, only: :show
   resources :lives
 end
