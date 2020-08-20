@@ -4,6 +4,7 @@
   .wrapper__main
     = link_to "募集投稿",new_ticket_path(artist_id: params[:artist_id] ,live_id: params[:live_id])
     - @tickets.each do |ticket|
+      =link_to "tst", ticket_path(ticket.id)
       %table.wrapper__main__box
         %tr.wrapper__main__box--user-info
           %th.wrapper__main__box--user-info--time-title

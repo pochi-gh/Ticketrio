@@ -20,6 +20,16 @@ class TicketsController < ApplicationController
       render :new
     end
   end
+
+  def show
+    @ticket = Ticket.find(params[:id])
+    @live = Live.find(@ticket.live.id)
+    @commnet = Comment.new
+    @comments = @ticket.comments.includes(:user)
+  end
+
+  
+
   private
     def artist_live_params
       params.permit(:artist_id,:live_id)
@@ -32,4 +42,7 @@ class TicketsController < ApplicationController
     def artist_params
       params.require(:ticket).permit(:artist_id)
     end
+
+
+
 end

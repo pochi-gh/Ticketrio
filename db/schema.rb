@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_16_043606) do
+ActiveRecord::Schema.define(version: 2020_08_19_121759) do
 
   create_table "artist_concerts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "artist_id"
@@ -35,6 +35,16 @@ ActiveRecord::Schema.define(version: 2020_08_16_043606) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["artist_name"], name: "index_artists_on_artist_name", unique: true
+  end
+
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "ticket_id"
+    t.text "text", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ticket_id"], name: "index_comments_on_ticket_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "lives", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -77,6 +87,8 @@ ActiveRecord::Schema.define(version: 2020_08_16_043606) do
   add_foreign_key "artist_concerts", "lives", column: "live_id"
   add_foreign_key "artist_lives", "artists"
   add_foreign_key "artist_lives", "lives", column: "live_id"
+  add_foreign_key "comments", "tickets"
+  add_foreign_key "comments", "users"
   add_foreign_key "tickets", "lives", column: "live_id"
   add_foreign_key "tickets", "users"
 end

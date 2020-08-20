@@ -1,0 +1,73 @@
+=render "template/header"
+.wrapper
+  .wrapper__show
+    %table.wrapper__main__box
+      %tr.wrapper__main__box--user-info
+        %th.wrapper__main__box--user-info--time-title
+          投稿日 
+        %td.wrapper__main__box--user-info--time-data
+          = @ticket.created_at.to_s(:datetime_jp)
+        %th.wrapper__main__box--user-info--user-name-title
+          投稿者 
+        %td.wrapper__main__box--user-info--user-name-data
+          = @ticket.user.name
+      %tr.wrapper__main__box--artist-info
+        %th.wrapper__main__box--artist-info--title
+          開催名
+        %td.wrapper__main__box--artist-info--name
+          = @ticket.live.title
+      %tr.wrapper__main__box--live-info
+        %th.wrapper__main__box--live-info-date-title
+          公演日時
+          %td.wrapper__main__box--live-info-date-title-data
+            = @ticket.live.data.strftime("%Y/%m/%d")
+          %td.wrapper__main__box--live-info-date-title-time
+            = @ticket.live.time.to_s(:time_jp)
+        %th.wrapper__main__box--live-info__stage
+          会場
+          %td.wrapper__main__box--live-info__stage__prefecture
+            = @ticket.live.prefecture.name  
+          %td.wrapper__main__box--live-info__stage__hall
+            = @ticket.live.hall
+      %tr.wrapper__main__box--seat
+        %th.wrapper__main__box--seat-area
+          座席
+          %td.wrapper__main__box--seat-area-data
+            = @ticket.seat
+        %th.wrapper__main__box--seat-num
+          枚数
+          %td.wrapper__main__box--seat-num-data
+            = @ticket.piece
+            枚
+        %th.wrapper__main__box--seat-price
+          チケット価格（手数料込）
+          %td.wrapper__main__box--seat-price-data
+            = @ticket.price
+            円
+      %td.wrapper__main__box--comment
+        = @ticket.text
+    .wrapper__show__comments
+      .wrapper__show__comments__area
+        %p.wrapper__show__comments--head 
+          コメント
+        -if @comments
+          - @comments.each do |comment|
+            .wrapper__show__comments__area--box
+              .wrapper__show__comments__area--box--upper
+                %p.wrapper__show__comments__area--box--upper__name
+                  = comment.user.name
+                %p.wrapper__show__comments__area--box--upper__time
+                  = comment.created_at.to_s(:datetime_jp)
+                %p.wrapper__show__comments__area--box__text
+                  = comment.text
+        = form_with(model: [@ticket, @commnet], local: true) do |form|
+          = form.text_field :text, placeholder:"コメントの入力"
+          = form.hidden_field :ticket_id, value: @ticket.id
+          = form.submit
+
+         
+        
+
+        
+
+
