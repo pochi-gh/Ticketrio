@@ -50,18 +50,21 @@
       .wrapper__show__comments__area
         %p.wrapper__show__comments--head 
           コメント
-        .wrapper__show__comments__area--box
-          .wrapper__show__comments__area--box--upper
-            %p.wrapper__show__comments__area--box--upper__name
-              太郎
-            %p.wrapper__show__comments__area--box--upper__time
-              2020/01/01 11:11
-          %p.wrapper__show__comments__area--box__text
-            なんでやねん
+        -if @comments
+          - @comments.each do |comment|
+            .wrapper__show__comments__area--box
+              .wrapper__show__comments__area--box--upper
+                %p.wrapper__show__comments__area--box--upper__name
+                  = comment.user.name
+                %p.wrapper__show__comments__area--box--upper__time
+                  = comment.created_at.to_s(:datetime_jp)
+                %p.wrapper__show__comments__area--box__text
+                  = comment.text
         = form_with(model: [@ticket, @commnet], local: true) do |form|
           = form.text_field :text, placeholder:"コメントの入力"
           = form.hidden_field :ticket_id, value: @ticket.id
           = form.submit
+
          
         
 
