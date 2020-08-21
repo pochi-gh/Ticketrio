@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :move_to_index
+
   def show
     @user = User.find(params[:id])
   end
@@ -14,6 +16,8 @@ class UsersController < ApplicationController
   def message
   end
 
-
+  def move_to_index
+    redirect_to root_path unless user_signed_in? &&  params[:id] == current_user.id.to_s
+  end
 
 end
