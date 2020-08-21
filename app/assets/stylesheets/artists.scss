@@ -52,7 +52,6 @@
       }
     }
     &__result{
-      
       background-color: #f5f5f5;
       padding-left:40px;
       max-height:150px;
@@ -67,17 +66,21 @@
       .login__announce{
         font-size:10px;
       }
-      &--name{
-
-      }
     }
     &__main{
-      
       &__artist_name{
         padding:20px 40px;
       }
+      a{
+        text-decoration: none;
+        color:#4169e1;
+      }
+      .live_add{
+        margin-left:40px;
+      }
       &__live{
         &__box{
+          
           font-size: 14px;
           padding: 20px 0 20px 40px;
           width: 200px;
@@ -88,7 +91,6 @@
             left: 40;
             width: 200px;
             height: 100%;
-  
           }
           &--upper{
             &__title{
@@ -116,98 +118,6 @@
             }
           }
         }
-      }
-    }
-  }
-  &__main{
-    width: calc(100% - 300px);
-    background-color: lightcyan;
-    padding-top: 100px;
-    &__box{
-      width:700px;
-      height: 150px;
-      background-color: lightskyblue;
-      font-size: 14px;
-      margin: 0 auto 50px;
-      border-left: 0.5px solid rgb(8, 8, 8);
-      border-right: 0.5px solid rgb(8, 8, 8);
-      border-bottom: 0.5px solid rgb(8, 8, 8);
-        tr{
-          border-top: 0.5px solid rgb(8, 8, 8);
-          height: 30px;
-          line-height: 30px;
-          th{
-            font-weight: bold;
-            margin: 0 10px;
-          }
-          td{
-            font-size: 14px;
-          }
-        }
-      &--user-info{
-        display: flex;
-        &--time-title{
-        }
-        &--time-data{
-        }
-        &--user-name-title{
-          padding-left: 50px;
-        }
-        &--user-name-data{
-        }
-      }
-      &--artist-info{
-        display: flex;
-        &--title{
-        }
-        &--name{
-        }
-      }
-      &--live-info{
-        display: flex;
-        &-date-title{
-          &-date{
-            border-right: 1px solid rgb(8, 8, 8);
-            
-          }
-          &-time{
-            padding-left: 20px;
-          }
-        }
-        &__stage{
-          padding-left: 40px;
-          &__prefecture{
-            
-          }
-          &__hall{
-            padding-left: 20px;
-          }
-        }
-      }
-      &--seat{
-        display: flex;
-        
-        &-area{
-
-          &-data{
-            width: 195px;
-            text-align: left;
-          }
-        }
-        &-num{
-          padding-left: 20px;
-          &-data{
-          }
-        }
-        &-price{
-          padding-left: 20px;
-          &-data{
-          }
-        }
-      }
-      &--comment{
-        border-top: 1px solid rgb(8, 8, 8);
-        padding-left: 10px;
       }
     }
   }

@@ -1,51 +1,52 @@
 =render "template/header"
 .wrapper
   .wrapper__show
-    %table.wrapper__main__box
-      %tr.wrapper__main__box--user-info
-        %th.wrapper__main__box--user-info--time-title
+    .wrapper__main__box
+      .wrapper__main__box--user-info
+        %span.wrapper__main__box--user-info--time-title
           投稿日 
-        %td.wrapper__main__box--user-info--time-data
+        %span.wrapper__main__box--user-info--time-data
           = @ticket.created_at.to_s(:datetime_jp)
-        %th.wrapper__main__box--user-info--user-name-title
+        %span.wrapper__main__box--user-info--user-name-title
           投稿者 
-        %td.wrapper__main__box--user-info--user-name-data
+        %span.wrapper__main__box--user-info--user-name-data
           = @ticket.user.name
-      %tr.wrapper__main__box--artist-info
-        %th.wrapper__main__box--artist-info--title
-          開催名
-        %td.wrapper__main__box--artist-info--name
+      .wrapper__main__box--artist-info
+        %span.wrapper__main__box--artist-info--title
+          公演名
+        %span.wrapper__main__box--artist-info--name
           = @ticket.live.title
-      %tr.wrapper__main__box--live-info
-        %th.wrapper__main__box--live-info-date-title
+      .wrapper__main__box--live-info
+        %span.wrapper__main__box--live-info-title
           公演日時
-          %td.wrapper__main__box--live-info-date-title-data
-            = @ticket.live.data.strftime("%Y/%m/%d")
-          %td.wrapper__main__box--live-info-date-title-time
-            = @ticket.live.time.to_s(:time_jp)
-        %th.wrapper__main__box--live-info__stage
+        %span.wrapper__main__box--live-info-date-title-data
+          = @ticket.live.data.strftime("%Y/%m/%d")
+        %span.wrapper__main__box--live-info-date-title-time
+          = @ticket.live.time.to_s(:time_jp)
+        %span.wrapper__main__box--live-info__stage
           会場
-          %td.wrapper__main__box--live-info__stage__prefecture
-            = @ticket.live.prefecture.name  
-          %td.wrapper__main__box--live-info__stage__hall
-            = @ticket.live.hall
-      %tr.wrapper__main__box--seat
-        %th.wrapper__main__box--seat-area
+        %span.wrapper__main__box--live-info__stage__prefecture
+          = @ticket.live.prefecture.name  
+        %span.wrapper__main__box--live-info__stage__hall
+          = @ticket.live.hall
+      .wrapper__main__box--seat
+        %span.wrapper__main__box--seat-area
           座席
-          %td.wrapper__main__box--seat-area-data
-            = @ticket.seat
-        %th.wrapper__main__box--seat-num
+        %span.wrapper__main__box--seat-area-data
+          = @ticket.seat
+        %span.wrapper__main__box--seat-num
           枚数
-          %td.wrapper__main__box--seat-num-data
-            = @ticket.piece
-            枚
-        %th.wrapper__main__box--seat-price
-          チケット価格（手数料込）
-          %td.wrapper__main__box--seat-price-data
-            = @ticket.price
-            円
-      %td.wrapper__main__box--comment
+        %span.wrapper__main__box--seat-num-data
+          = @ticket.piece
+          枚
+        %span.wrapper__main__box--seat-price
+          チケット価格
+        %span.wrapper__main__box--seat-price-data
+          = @ticket.price
+          円/枚
+      .wrapper__main__box--comment
         = @ticket.text
+
     .wrapper__show__comments
       .wrapper__show__comments__area
         %p.wrapper__show__comments--head 
