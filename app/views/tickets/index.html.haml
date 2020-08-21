@@ -2,7 +2,8 @@
 .wrapper
   =render "template/sidebar"
   .wrapper__main
-    = link_to "募集投稿",new_ticket_path(artist_id: params[:artist_id] ,live_id: params[:live_id])
+    = link_to "チケットの新規募集投稿",new_ticket_path(artist_id: params[:artist_id] ,live_id: params[:live_id]),class:"new_ticket_btn"
+    
     - @tickets.each do |ticket|
       .wrapper__main__box
         = link_to "", ticket_path(ticket.id)

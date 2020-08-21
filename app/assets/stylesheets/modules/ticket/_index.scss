@@ -1,7 +1,17 @@
 .wrapper__main{
   width: calc(100% - 300px);
   background-color: lightcyan;
-  padding-top: 100px;
+  padding-top: 70px;
+  a{
+    text-decoration: none;
+    color:#4169e1;
+  }
+  .new_ticket_btn{
+    padding-left:100px;
+    width: calc(100% - 300px);
+    display: block;
+    margin-bottom:30px;
+  }
   &__box{
     width:700px;
     background-color: lightskyblue;
