@@ -28,7 +28,14 @@ class TicketsController < ApplicationController
     @comments = @ticket.comments.includes(:user)
   end
 
-  
+  def edit
+  end
+
+  def destroy
+    ticket = Ticket.find(params[:id])
+    ticket.destroy
+  end
+
 
   private
     def artist_live_params

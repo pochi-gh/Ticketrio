@@ -1,0 +1,34 @@
+=render "template/header"
+.warapper__user_show
+  =render "user_side"
+  .warapper__user_show__main
+    .warapper__user_show__main__comment
+      .warapper__user_show__main__comment--header
+      .warapper__user_show__main__comment--ticket
+        - @comments .each do |comment|
+          .comment--ticket__box
+            =link_to"",ticket_path(comment.ticket.id)
+            .comment--ticket__box--artist-info
+              %span.comment--ticket__box--artist-info--title.comment--ticket__box--title
+                開催名
+              %span.comment--ticket__box--artist-info--name
+                = comment.ticket.live.title
+            .comment--ticket__box--live-info
+              .comment--ticket__box--live-info-date-title
+                公演日時
+                %span.comment--ticket__box--live-info-date-title-data
+                  = comment.ticket.live.data.strftime("%Y/%m/%d")
+                %span.comment--ticket__box--live-info-date-title-time
+                  = comment.ticket.live.time.to_s(:time_jp)
+                  開演
+              .comment--ticket__box--live-info__stage
+                会場
+                %span.comment--ticket__box--live-info__stage__prefecture
+                  = comment.ticket.live.prefecture.name  
+                %span.comment--ticket__box--live-info__stage__hall
+                  = comment.ticket.live.hall
+            .comment--ticket__box--text
+              .comment--ticket__box--text--area
+                = comment.text
+              .comment--ticket__box--text--time
+                = comment.created_at.to_s(:datetime_jp)
