@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   end
 
   def comment
+    @comments = Comment.where(user_id: params[:id])
   end
 
   def message

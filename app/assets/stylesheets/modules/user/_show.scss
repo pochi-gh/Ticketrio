@@ -1,3 +1,42 @@
+@mixin user_show{
+    width:700px;
+    background-color: lightskyblue;
+    font-size: 14px;
+    margin: 0 auto 50px;
+    border: 0.5px solid rgb(8, 8, 8);
+    position: relative;
+    a{
+      position:absolute;
+      top: 0;
+      left: 0;
+      width: 700px;
+      height: 90px;
+    }
+    &--title{
+      height: 30px;
+      line-height: 30px;
+      padding: 0 20px 0 5px;
+    }
+    &--user-info{
+      border-bottom: 0.5px solid rgb(8, 8, 8);
+    }
+    &--artist-info{
+      border-bottom: 0.5px solid rgb(8, 8, 8);
+    }
+    &--live-info{
+      height: 30px;
+      line-height: 30px;
+      padding: 0 20px 0 5px;
+      display:flex;
+      &__stage{
+        margin-left:150px;
+        &__prefecture{
+          padding:0 10px
+        }
+      }
+    }
+  }
+
 .warapper__user_show{
   display: flex;
   &__side_bar{
@@ -18,43 +57,23 @@
           text-align: right;
         }
         .post--ticket__box{
-          width:700px;
+          @include user_show;
           height: 90px;
-          background-color: lightskyblue;
-          font-size: 14px;
-          margin: 0 auto 50px;
-          border: 0.5px solid rgb(8, 8, 8);
-          position: relative;
-          a{
-            position:absolute;
-            top: 0;
-            left: 0;
-            width: 700px;
-            height: 90px;
-          }
-          &--title{
-            height: 30px;
-            line-height: 30px;
-            padding: 0 20px 0 5px;
-          }
-          &--user-info{
-
-            border-bottom: 0.5px solid rgb(8, 8, 8);
-
-          }
-          &--artist-info{
-            border-bottom: 0.5px solid rgb(8, 8, 8);
-          }
-          &--live-info{
-            height: 30px;
-            line-height: 30px;
-            padding: 0 20px 0 5px;
-            display:flex;
-            &__stage{
-              margin-left:150px;
-              &__prefecture{
-                padding:0 10px
-              }
+        }
+      }
+    }
+    &__comment{
+      &--ticket{
+        .comment--ticket__box{
+          @include user_show;
+          &--text{
+            border-top: 0.5px solid rgb(8, 8, 8);
+            &--area{
+              padding: 10px 0 0 10px;
+            }
+            &--time{
+              text-align: right;
+              padding: 10px;
             }
           }
         }
