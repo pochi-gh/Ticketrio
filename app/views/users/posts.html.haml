@@ -1,0 +1,37 @@
+=render "template/header"
+.warapper__user_show
+  =render "user_side"
+  .warapper__user_show__main
+    .warapper__user_show__main__post
+      .warapper__user_show__main__post--header
+      .warapper__user_show__main__post--ticket
+        - @tickets.each do |ticket|
+          .post--ticket__box
+            .post--ticket__box--user-info
+              %span.post--ticket__box--user-info--time-title.post--ticket__box--title
+                投稿日 
+              %span.post--ticket__box--user-info--time-data
+                = ticket.created_at.to_s(:datetime_jp)
+              %span.post--ticket__box--user-info--edit
+                =link_to "編集する", edit_ticket_path(ticket.id)
+                =link_to "削除する", "/tweets/#{ticket.id}", method: :delete
+            .post--ticket__box--artist-info
+              %span.post--ticket__box--artist-info--title.post--ticket__box--title
+                開催名
+              %span.post--ticket__box--artist-info--name
+                = ticket.live.title
+            .post--ticket__box--live-info
+              .post--ticket__box--live-info-date-title
+                公演日時
+                %span.post--ticket__box--live-info-date-title-data
+                  = ticket.live.data.strftime("%Y/%m/%d")
+                %span.post--ticket__box--live-info-date-title-time
+                  = ticket.live.time.to_s(:time_jp)
+              .post--ticket__box--live-info__stage
+                会場
+                %span.post--ticket__box--live-info__stage__prefecture
+                  = ticket.live.prefecture.name  
+                %span.post--ticket__box--live-info__stage__hall
+                  = ticket.live.hall
+
+          
