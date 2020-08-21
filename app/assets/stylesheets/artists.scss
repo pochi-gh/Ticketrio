@@ -30,16 +30,18 @@
 .wrapper{
   height: calc(100vh - 100px);
   width: 100vw;
-  background-color: lightskyblue;
   display: flex;
+  border-top:0.5px solid #333;
   &__side_bar{
     height: 100%;
     width: 300px;
-    background-color: lightpink;
+    border-right:0.5px solid #333;
+    background-color: lightyellow;
     &__search{
       width:100%;
-      background-color: lightslategray;
+      border-bottom:0.5px solid #333;
       padding: 40px 0 ;
+      background-color: lightcyan;
       &--area{
         display: block;
         width: 80%;
@@ -50,6 +52,7 @@
       }
     }
     &__result{
+      
       background-color: #f5f5f5;
       padding-left:40px;
       max-height:150px;
@@ -69,6 +72,7 @@
       }
     }
     &__main{
+      
       &__artist_name{
         padding:20px 40px;
       }
