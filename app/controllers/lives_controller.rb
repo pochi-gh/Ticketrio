@@ -1,6 +1,7 @@
 class LivesController < ApplicationController
   def index
     @artist = Artist.find(params[:id])
+    @lives = ArtistConcert.where(artist_id: params[:id]).includes(:live).order("lives.data ASC")
   end
 
 
