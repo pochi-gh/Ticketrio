@@ -19,4 +19,14 @@
             = form.submit
       - else
         該当日時のコンサート情報が見つかりません。
-  
+        = form_with model: @live, class:'.wrapper__side_bar__add', local:true  do |form|
+          = @artist.artist_name
+          = form.text_field :title, placeholder:"公演名を入力"
+          = params[:data].strftime("%Y/%m/%d")
+          = form.hidden_field :data, value: params[:data]
+          = params[:time].to_s(:time_jp)
+          = form.hidden_field :time, value: params[:time]
+          = form.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "---", class: 'select_prefecture'
+          = form.text_field :hall
+          = form.hidden_field :artist_id, value: @artist.id
+          = form.submit

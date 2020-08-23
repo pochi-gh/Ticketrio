@@ -19,13 +19,12 @@ class LivesController < ApplicationController
 
 
   def create
-    if params.has_key?(:title)
+    if params[:live].has_key?(:title)
       @live = Live.new(live_params)
       if @live.save
         @concert = ArtistConcert.new(artist_id: artist_params[:artist_id], live_id: @live.id)
         @concert.save
         redirect_to "/lives?id=#{artist_params[:artist_id]}"
-
       else
         render :new
       end
@@ -36,7 +35,6 @@ class LivesController < ApplicationController
       else
         render :search
       end
-
     end
   end
 
