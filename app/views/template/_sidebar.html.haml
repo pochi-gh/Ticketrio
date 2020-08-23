@@ -5,21 +5,6 @@
   .wrapper__side_bar__main
     .wrapper__side_bar__main__artist_name
       = @artist.artist_name
-    -if user_signed_in?
-      = form_with url: search_lives_path ,class:'live_add',method: "get", local:"ture"  do |form|
-        %p
-          = form.label "日付"
-          = form.date_select :data, use_month_numbers: true
-        %p
-          = form.label "時間"
-          = form.time_select :time, ignore_data:true
-        %p
-          = form.label "開催地"
-          = form.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "---", class: 'select_prefecture'
-          = form.hidden_field :artist_id, value:@artist.id
-        = form.submit
-
-
     .wrapper__side_bar__main__live
     - @artist.artist_concerts.each do |artist_concert|
       .wrapper__side_bar__main__live__box

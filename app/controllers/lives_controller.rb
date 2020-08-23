@@ -14,19 +14,29 @@ class LivesController < ApplicationController
     params[:time] = new_time
     @lives = Live.where(data: params[:data],time: params[:time], prefecture_id: live_search_params[:prefecture_id])
     @artist = Artist.find(params[:artist_id])
- 
+    @live = Live.new
   end
 
 
   def create
-    @live = Live.new(live_params)
-    if @live.save
-      @concert = ArtistConcert.new(artist_id: artist_params[:artist_id], live_id: @live.id)
-      @concert.save
-      redirect_to "/lives?id=#{artist_params[:artist_id]}"
+    if params.has_key?(:title)
+      @live = Live.new(live_params)
+      if @live.save
+        @concert = ArtistConcert.new(artist_id: artist_params[:artist_id], live_id: @live.id)
+        @concert.save
+        redirect_to "/lives?id=#{artist_params[:artist_id]}"
 
+      else
+        render :new
+      end
     else
-      render :new
+      @concert = ArtistConcert.new(artist_id: search_params[:artist_id], live_id: search_params[:live_id])
+      if @concert.save
+        redirect_to "/lives?id=#{artist_params[:artist_id]}"
+      else
+        render :search
+      end
+
     end
   end
 
@@ -41,6 +51,10 @@ class LivesController < ApplicationController
 
   def live_search_params
     params.permit(:data, :time, :prefecture_id, :artist_id)
+  end
+
+  def search_params
+    params.require(:live).permit(:artist_id, :live_id)
   end
 
   def new_data

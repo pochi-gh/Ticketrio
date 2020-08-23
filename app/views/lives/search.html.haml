@@ -13,10 +13,10 @@
           =live.title
           =live.prefecture.name 
           =live.hall
-        -# = form_with model: @concert ,class:"tikect_new__wrapper__form_area" do |form|
-        -#   = form.hidden_field :live_id, value: live.id
-        -#   = form.hidden_field :artist_id, value: @artist.id
-        -#   = form.submit
+          = form_with model: @live ,class:"tikect_new__wrapper__form_area" do |form|
+            = form.hidden_field :live_id, value: live.id
+            = form.hidden_field :artist_id, value: @artist.id
+            = form.submit
       - else
-        新規追加
+        該当日時のコンサート情報が見つかりません。
   

@@ -1,3 +1,44 @@
 =render "template/header"
 .wrapper
-  =render "template/sidebar"
+  .wrapper__side_bar
+    .wrapper__side_bar__main
+      .wrapper__side_bar__main__artist_name
+        = @artist.artist_name
+      .wrapper__side_bar__main__live
+        -if @artist.artist_concerts.present?
+          - @artist.artist_concerts.each do |artist_concert|
+            .wrapper__side_bar__main__live__box
+              =link_to "", tickets_path(artist_id: artist_concert.artist_id, live_id: artist_concert.live_id)
+              .wrapper__side_bar__main__live__box--upper
+                .wrapper__side_bar__main__live__box--upper__title
+                  = artist_concert.live.title
+              .wrapper__side_bar__main__live__box--middle
+                .wrapper__side_bar__main__live__box--middle__date
+                  = artist_concert.live.data.strftime("%Y/%m/%d")
+                .wrapper__side_bar__main__live__box--middle__time
+                  = artist_concert.live.time.to_s(:time_jp)
+                  開演
+              .wrapper__side_bar__main__live__box--lower
+                .wrapper__side_bar__main__live__box--lower__prefectures
+                  = artist_concert.live.prefecture.name  
+                .wrapper__side_bar__main__live__box--lower__hall
+                  = artist_concert.live.hall
+        -else
+          %p
+            コンサート情報が見つかりませんでした。
+
+  .wrapper__live__add
+    .wrapper__live__add--area
+      .wrapper__live__add--area--title
+        コンサート情報の検索及び追加
+      -if user_signed_in?
+        = form_with url: search_lives_path ,class:'live_add',method: "get", local:"ture"  do |form|
+          = form.label "日付"
+          = form.date_select :data, use_month_numbers: true, class:"date_form"
+          = form.time_select :time, ignore_data:true, class:"time_form"
+          = form.label "開演"
+          .live_add_lower
+            = form.label "開催地"
+            = form.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "---", class: 'prefecture_form'
+            = form.hidden_field :artist_id, value:@artist.id
+            = form.submit "検 索", class:"submit_btn"

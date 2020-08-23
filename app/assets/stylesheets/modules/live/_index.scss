@@ -1,0 +1,41 @@
+
+
+
+
+
+
+
+
+
+.wrapper__live__add{
+  width:calc(100vw - 300px);
+  background-color: lavender;
+  &--area{
+    padding-top:60px;
+    width: 600px;
+    height: 300px;
+    margin-left:100px;
+    &--title{
+      font-size:20px;
+      margin-bottom:30px;
+    }
+    .live_add{
+      #_data_1i,#_data_2i,#_data_3i,#_time_4i,#_time_5i{
+        height:30px;
+      }
+      #_data_3i{
+        margin-right:20px;
+      }
+      .live_add_lower{
+        margin-top:10px;
+        #prefecture_id{
+          height:30px;
+          margin-right:50px;
+        }
+        .submit_btn{
+          width: 120px;
+        }
+      }
+    }
+  }
+}
