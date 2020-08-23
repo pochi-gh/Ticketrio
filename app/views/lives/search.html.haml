@@ -1,0 +1,22 @@
+=render "template/header"
+.wrapper
+  .wrapper__side_bar
+    .wrapper__side_bar--artist
+    = @artist.artist_name
+    ライブ情報追加
+    =params[:data].strftime("%Y/%m/%d")
+    =params[:time].to_s(:time_jp)
+    のコンサート情報
+    .wrapper__side_bar__live-data
+      - if @lives.length >0
+        - @lives.each do |live|
+          =live.title
+          =live.prefecture.name 
+          =live.hall
+        -# = form_with model: @concert ,class:"tikect_new__wrapper__form_area" do |form|
+        -#   = form.hidden_field :live_id, value: live.id
+        -#   = form.hidden_field :artist_id, value: @artist.id
+        -#   = form.submit
+      - else
+        新規追加
+  

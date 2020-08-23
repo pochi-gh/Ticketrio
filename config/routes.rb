@@ -13,5 +13,9 @@ Rails.application.routes.draw do
       get 'message'
     end
   end
-  resources :lives
+  resources :lives do
+    collection do
+      get 'search'
+    end
+  end
 end
