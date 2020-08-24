@@ -3,7 +3,8 @@ class TicketsController < ApplicationController
   def index
     @tickets = Ticket.where(live_id: artist_live_params[:live_id])
     @artist = Artist.find(artist_live_params[:artist_id])
-    @lives = ArtistConcert.where(artist_id: artist_live_params[:artist_id]).includes(:live).order("lives.data ASC")
+    @lives = ArtistConcert.where(artist_id: artist_live_params[:artist_id]).includes(:live).where('data >= ?', Date.today).order("lives.data ASC")
+  
   end
 
   def new
