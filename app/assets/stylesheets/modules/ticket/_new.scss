@@ -1,0 +1,11 @@
+.tikect_new__wrapper{
+  background-color: lightslategray;
+  width: calc(100vw - 300px);
+  height: calc(100vh - 100px);
+  &--box{
+    width: 600px;
+    height: 200px;
+    background-color: lightsalmon;
+    margin:100px auto 0;
+  }
+}
