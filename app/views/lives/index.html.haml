@@ -31,8 +31,8 @@
   .wrapper__live__add
     .wrapper__live__add--area
       .wrapper__live__add--area--title
-        コンサート情報の検索及び追加
       -if user_signed_in?
+        コンサート情報の検索及び追加
         = form_with url: search_lives_path ,class:'live_add',method: "get", local:"ture"  do |form|
           = form.label "日付"
           = form.date_select :data, use_month_numbers: true, class:"date_form"

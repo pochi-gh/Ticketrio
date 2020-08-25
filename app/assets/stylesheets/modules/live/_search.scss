@@ -1,0 +1,58 @@
+.wrapper__side_bar--live-title{
+  margin-top:30px;
+  padding-left:10px;
+  display: block;
+}
+.wrapper__side_bar__live-data{
+  &--nil{
+    p{
+      padding-left:30px;
+      font-size:14px;
+    }
+    &--announce{
+      margin:20px 0 ;
+    }
+
+   
+
+    .wrapper__side_bar__add{
+      margin:20px 10px 0 10px;
+      .artist_name{
+        padding-left:10px;
+        margin-bottom:10px;
+      }
+      .data_date{
+        padding-left:10px;
+        margin-bottom:10px;
+      }
+      select{
+        display: block;
+        margin:0 0 10px 10px;
+        width:240px;
+        height: 30px;
+      }
+      .form_labe{
+        display: block;
+        margin-bottom:10px;
+
+      }
+      .form_data{
+        display: block;
+        margin:0 0 10px 10px;
+        width:240px;
+        font-size:14px;
+        height:30px;
+      }
+      .live_add_btn{
+        margin:30px 0 0 50px;
+        font-size:14px;
+        padding:5px;
+        border-radius: 10px;
+        background-color: lightcyan;
+
+      }
+
+    }
+
+  }
+}
