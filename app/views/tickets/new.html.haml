@@ -2,20 +2,47 @@
 .wrapper
   =render "template/sidebar"
   .tikect_new__wrapper
+    %h2.tikect_new__wrapper--title
+      チケット募集の新規投稿
     .tikect_new__wrapper--box
-      = label.
-      = @artist.artist_name
-      = @live.title
-      = @live.data.strftime("%Y/%m/%d")
-      = @live.time.to_s(:time_jp)
-      = @live.prefecture.name
-      = @live.hall
+      .tikect_new__wrapper--box__artist
+        .tikect_new__wrapper--box__artist--title
+          アーティスト
+          %span.tikect_new__wrapper--box__artist--title--data
+            = @artist.artist_name
+      .tikect_new__wrapper--box__live
+        .tikect_new__wrapper--box__live--title
+          公演名
+          %span.tikect_new__wrapper--box__live--title--data
+            = @live.title
+      .tikect_new__wrapper--box__live-day
+        開催日時
+        %span.tikect_new__wrapper--box__live-day--data
+          = @live.data.strftime("%Y/%m/%d")
+          = @live.time.to_s(:time_jp)
+        %span.tikect_new__wrapper--box__live-day--hall
+          会   場
+        %span.tikect_new__wrapper--box__live-day--hall-data
+          = @live.prefecture.name
+          = @live.hall
       = form_with model: @ticket ,class:"tikect_new__wrapper__form_area" do |form|
-        = form.text_field :seat, placeholder:"座席詳細を入力"
-        = form.number_field :piece, min:0, placeholder:"チケット枚数"
-        = form.text_field :text, placeholder:"詳細情報を入力"
-        = form.number_field :price, min:0, placeholder:"手数料を込めた金額"
+        .tikect_new__wrapper__form_area--seat
+          = form.label "座席情報"
+          = form.text_field :seat, placeholder:"座席詳細を入力",class:"tikect_new__wrapper__form_area--seat-form"
+        .tikect_new__wrapper__form_area--ticket_info
+          .tikect_new__wrapper__form_area--ticket_info--left
+            = form.label "枚  数"
+            = form.number_field :piece, min:0,class:"ticket_info--left--piece-form"
+            枚
+          .tikect_new__wrapper__form_area--ticket_info--right
+            = form.label "価格"
+            = form.number_field :price, min:0, placeholder:"1枚あたりの金額",class:"ticket_info--left--price-form"
+            円/枚
+        .tikect_new__wrapper__form_area--text
+          = form.label "詳細情報"
+          .tikect_new__wrapper__form_area--text--form
+            = form.text_area :text, row:"3",placeholder:"詳細情報を入力",class:"text_form_area"
         = form.hidden_field :live_id, value: @live.id
         = form.hidden_field :user_id, value: current_user.id
         = form.hidden_field :artist_id, value: @artist.id
-        = form.submit
+        = form.submit "投    稿", class:"tikect_new__wrapper__form_area--btn"
