@@ -1,74 +1,89 @@
 =render "template/header"
-.wrapper
-  .wrapper__show
-    .wrapper__main__box
-      .wrapper__main__box--user-info
-        %span.wrapper__main__box--user-info--time-title
-          投稿日 
-        %span.wrapper__main__box--user-info--time-data
-          = @ticket.created_at.to_s(:datetime_jp)
-        %span.wrapper__main__box--user-info--user-name-title
-          投稿者 
-        %span.wrapper__main__box--user-info--user-name-data
-          = @ticket.user.name
-      .wrapper__main__box--artist-info
-        %span.wrapper__main__box--artist-info--title
-          公演名
-        %span.wrapper__main__box--artist-info--name
-          = @ticket.live.title
-      .wrapper__main__box--live-info
-        %span.wrapper__main__box--live-info-title
-          公演日時
-        %span.wrapper__main__box--live-info-date-title-data
-          = @ticket.live.data.strftime("%Y/%m/%d")
-        %span.wrapper__main__box--live-info-date-title-time
-          = @ticket.live.time.to_s(:time_jp)
-        %span.wrapper__main__box--live-info__stage
-          会場
-        %span.wrapper__main__box--live-info__stage__prefecture
-          = @ticket.live.prefecture.name  
-        %span.wrapper__main__box--live-info__stage__hall
-          = @ticket.live.hall
-      .wrapper__main__box--seat
-        %span.wrapper__main__box--seat-area
-          座席
-        %span.wrapper__main__box--seat-area-data
-          = @ticket.seat
-        %span.wrapper__main__box--seat-num
-          枚数
-        %span.wrapper__main__box--seat-num-data
-          = @ticket.piece
-          枚
-        %span.wrapper__main__box--seat-price
-          チケット価格
-        %span.wrapper__main__box--seat-price-data
-          = @ticket.price
-          円/枚
-      .wrapper__main__box--comment
-        = @ticket.text
 
-    .wrapper__show__comments
-      .wrapper__show__comments__area
-        %p.wrapper__show__comments--head 
-          コメント
-        -if @comments
-          - @comments.each do |comment|
-            .wrapper__show__comments__area--box
-              .wrapper__show__comments__area--box--upper
-                %p.wrapper__show__comments__area--box--upper__name
-                  = comment.user.name
-                %p.wrapper__show__comments__area--box--upper__time
-                  = comment.created_at.to_s(:datetime_jp)
-                %p.wrapper__show__comments__area--box__text
-                  = comment.text
+.wrapper__show
+  .wrapper__main__box
+    .wrapper__main__box--user-info
+      %span.wrapper__main__box--user-info--time-title
+        投稿日 
+      %span.wrapper__main__box--user-info--time-data
+        = @ticket.created_at.to_s(:datetime_jp)
+      %span.wrapper__main__box--user-info--user-name-title
+        投稿者 
+      %span.wrapper__main__box--user-info--user-name-data
+        = @ticket.user.name
+    .wrapper__main__box--artist-info
+      %span.wrapper__main__box--artist-info--title
+        公演名
+      %span.wrapper__main__box--artist-info--name
+        = @ticket.live.title
+    .wrapper__main__box--live-info
+      %span.wrapper__main__box--live-info-title
+        公演日時
+      %span.wrapper__main__box--live-info-date-title-data
+        = @ticket.live.data.strftime("%Y/%m/%d")
+      %span.wrapper__main__box--live-info-date-title-time
+        = @ticket.live.time.to_s(:time_jp)
+      %span.wrapper__main__box--live-info__stage
+        会場
+      %span.wrapper__main__box--live-info__stage__prefecture
+        = @ticket.live.prefecture.name  
+      %span.wrapper__main__box--live-info__stage__hall
+        = @ticket.live.hall
+    .wrapper__main__box--seat
+      %span.wrapper__main__box--seat-area
+        座席
+      %span.wrapper__main__box--seat-area-data
+        = @ticket.seat
+      %span.wrapper__main__box--seat-num
+        枚数
+      %span.wrapper__main__box--seat-num-data
+        = @ticket.piece
+        枚
+      %span.wrapper__main__box--seat-price
+        チケット価格
+      %span.wrapper__main__box--seat-price-data
+        = @ticket.price
+        円/枚
+    .wrapper__main__box--comment
+      = @ticket.text
+
+  .wrapper__show__comments
+    .wrapper__show__comments__area
+      %p.wrapper__show__comments__area--head 
+        コメント一覧
+      -if @comments
+        - @comments.each do |comment|
+          .wrapper__show__comments__area--box
+            %span.wrapper__show__comments__area--box__name
+              %label 投稿者:
+              = comment.user.name
+            %span.wrapper__show__comments__area--box__time
+              %label 投稿日時:
+              = comment.created_at.to_s(:datetime_jp)
+
+            -if user_signed_in? && comment.user.id == current_user.id
+              %span.wrapper__show__comments__area--box__btn
+                %span.wrapper__show__comments__area--box__btn--edit
+                  =link_to "編集","#"
+                %span.wrapper__show__comments__area--box__btn--delete
+                  =link_to "削除","#"
+            %p.wrapper__show__comments__area--box__text
+              = comment.text
+
+      -if user_signed_in?
         = form_with(model: [@ticket, @commnet], local: true) do |form|
-          = form.text_field :text, placeholder:"コメントの入力"
+          = form.text_area :text, placeholder:"コメントの入力",class:"comment_form"
           = form.hidden_field :ticket_id, value: @ticket.id
-          = form.submit
+          = form.submit "コメント投稿", class:"comment_form-btn"
+      -else
+        .comment_form_none  
+          %p.comment_form_none-announce
+            コメント機能はログイン後使用することができます。
 
-         
-        
 
         
+      
+
+      
 
 
