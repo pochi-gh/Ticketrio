@@ -38,27 +38,27 @@
           .wrapper__side_bar__live-data--nil--announce
             %p 右記フォームからコンサート情報を
             %p 追加してください。
-
-  .wrapper__live_new
-    .wrapper__live_new--title
-      新規のコンサート情報追加
-    = form_with model: @live, class:'wrapper__side_bar__add', local:true  do |form|
-      = form.label "アーティスト名",class:"name_label form_label"
-      .artist_name
-        = @artist.artist_name
-      = form.label "公演名",class:"title_label form_label"
-      = form.text_field :title, placeholder:"公演名を入力",class:"title_data form_data"
-      = form.label "公演日時",class:"date_label form_label"
-      .data_date
-        = params[:data].strftime("%Y/%m/%d")
-        = form.hidden_field :data, value: params[:data]
-        = params[:time].to_s(:time_jp)
-        = form.hidden_field :time, value: params[:time]
-        %p 開演
-      = form.label "開催場所",class:"prefecture_label form_label"
-      = form.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "---", class:"prefecture_data form_data"
-      = form.label "会場名",class:"hall_label form_label"
-      = form.text_field :hall, class:"hall_data form_data"
-      = form.hidden_field :artist_id, value: @artist.id
-      = form.submit "ライブ情報の追加", class:"live_add_btn"
+  .wrapper__live
+    .wrapper__live_new
+      .wrapper__live_new--title
+        新規のコンサート情報追加
+      = form_with model: @live, class:'wrapper__side_bar__add', local:true  do |form|
+        = form.label "アーティスト名",class:"name_label form_label"
+        .artist_name
+          = @artist.artist_name
+        = form.label "公演名",class:"title_label form_label"
+        = form.text_field :title, placeholder:"公演名を入力",class:"title_data form_data"
+        = form.label "公演日時",class:"date_label form_label"
+        .data_date
+          = params[:data].strftime("%Y/%m/%d")
+          = form.hidden_field :data, value: params[:data]
+          = params[:time].to_s(:time_jp)
+          = form.hidden_field :time, value: params[:time]
+          %p 開演
+        = form.label "開催場所",class:"prefecture_label form_label"
+        = form.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "---", class:"prefecture_data form_data"
+        = form.label "会場名",class:"hall_label form_label"
+        = form.text_field :hall, class:"hall_data form_data"
+        = form.hidden_field :artist_id, value: @artist.id
+        = form.submit "ライブ情報の追加", class:"live_add_btn"
 

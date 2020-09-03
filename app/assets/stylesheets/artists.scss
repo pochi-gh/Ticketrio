@@ -2,7 +2,7 @@
   display: flex;
   height: 100px;
   width: 100vw;
-  background-color: #f0f8ff;
+  background-color: $main_color;
   &__logo{
     height: 100%;
     width:100px;
@@ -36,12 +36,11 @@
     height: 100%;
     width: 300px;
     border-right:0.5px solid #333;
-    background-color: lightyellow;
+    background-color: $main_color;
     &__search{
       width:100%;
       border-bottom:0.5px solid #333;
       padding: 40px 0 ;
-      background-color: lightcyan;
       &--area{
         display: block;
         width: 80%;
@@ -84,7 +83,6 @@
           font-size:14px;
         }
         &__box{
-          
           font-size: 14px;
           padding: 20px 0 20px 40px;
           width: 200px;
