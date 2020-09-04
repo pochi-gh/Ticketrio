@@ -11,7 +11,7 @@ class TicketsController < ApplicationController
     @artist = Artist.find(artist_live_params[:artist_id])
     @live = Live.find(artist_live_params[:live_id])
     @ticket = Ticket.new
-    @lives = ArtistConcert.where(artist_id: artist_live_params[:artist_id]).includes(:live).order("lives.data ASC")
+    @lives = ArtistConcert.where(artist_id: artist_live_params[:artist_id]).includes(:live).where('data >= ?', Date.today).order("lives.data ASC")
   end
 
   def create
