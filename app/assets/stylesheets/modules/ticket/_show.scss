@@ -2,6 +2,145 @@
   width: 100%;
   background-color: $main_color;
   padding-top:60px;
+  .live{
+    padding:50px 100px;
+    display: flex;
+    &_info{
+
+    }
+    a{
+      text-decoration: none;
+      color:#4169e1;
+    }
+    .new_ticket_btn{
+      padding:20px 0 0 300px;
+      display: block;
+      margin-bottom:30px;
+    }
+  }
+
+  &__box{
+    width:700px;
+    background-color: $main_bc;
+    font-size: 14px;
+    margin: 35px auto 50px;
+    border: 0.5px solid rgb(8, 8, 8);
+    position: relative;
+    border-radius: 10px;
+    &--user-info{
+      height: 40px;
+      line-height: 40px;
+      border-bottom:0.5px solid rgb(8, 8, 8);
+      padding-left:10px;
+      display:flex;
+      justify-content: space-between;
+      &--time-title{
+        font-weight: bold;
+        padding-right: 10px;
+      }
+      &--user-name-title{
+        font-weight: bold;
+        padding: 0 10px 0 50px;
+      }
+      .user-info-crrent{
+        a{
+          padding-right:10px;
+          text-decoration: none;
+          color:#4169e1;
+        }
+       
+      }
+    }
+    &--artist-info{
+      padding-left:10px;
+      &--title{
+        font-weight: bold;
+      }
+      
+    }
+    &--live-info{
+      padding-left:10px;
+      &--title{
+        font-weight: bold;
+      }
+      &__stage{
+        padding-left:130px;
+        font-weight: bold;
+      }
+    }
+    &--seat{
+      height: 40px;
+      line-height: 40px;
+      padding-left:10px;
+      &-area{
+        font-weight: bold;
+        &-data{
+          display: inline-block;
+          width: 250px;
+          text-align: left;
+        }
+      }
+      &-num{
+        padding: 0 10px 0 20px;
+        font-weight: bold;
+        &-data{
+        }
+      }
+      &-price{
+        padding-left: 20px;
+        font-weight: bold;
+        &-data{
+        }
+      }
+    }
+    &--comment{
+      border-top: 1px solid rgb(8, 8, 8);
+      height: 60px;
+      padding: 10px;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   &__comments{
