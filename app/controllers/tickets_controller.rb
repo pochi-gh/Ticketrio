@@ -47,6 +47,7 @@ class TicketsController < ApplicationController
   def destroy
     ticket = Ticket.find(params[:id])
     ticket.destroy
+    redirect_to root_path
   end
 
 
