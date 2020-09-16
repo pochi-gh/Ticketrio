@@ -1,3 +1,4 @@
+
 .wrapper__side_bar--live-title{
   margin-top:30px;
   padding-left:10px;
@@ -5,8 +6,12 @@
   font-weight: bold;
   display: block;
 }
+
+
 .wrapper__side_bar__live-data{
   position: relative;
+  width: 250px;
+  
   a{
     position: absolute;
     top: 0;
@@ -15,7 +20,11 @@
     height: 90%;
   }
   &--box{
-    margin:10px 0 10px 30px;
+    margin:10px 0 20px 30px;
+    background-color: $main_color;
+    padding:10px;
+    border-radius: 20px;
+    
     p{
       font-weight: bold;
     }
@@ -26,7 +35,7 @@
     }
     .tikect_new__wrapper__form_area{
       .live_artist_add_btn{
-        margin-left: 120px;
+        margin-left: 80px;
         font-size:12px;
       }
     }

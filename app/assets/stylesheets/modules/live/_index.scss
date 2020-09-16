@@ -1,16 +1,26 @@
 
+.artist_live_box{
+  background-color: $main_bc;
+}
+
 .wrapper__live__add{
   width:calc(100vw - 300px);
-  
+  background-color: $main_color;
+
   &--area{
     width: 600px;
-    height: 300px;
+    height: 200px;
     margin: 60px 0 0 100px;
-    background-color: $main_color;
+    padding:30px 0 0 30px;
+    background-color: $main_bc;
+    border-radius: 20px;
+    p{
+      margin-bottom:20px;
+    }
     &--title{
       font-size:20px;
     }
-    .live_add{
+    .live_add--form{
       #_data_1i,#_data_2i,#_data_3i,#_time_4i,#_time_5i{
         height:30px;
       }

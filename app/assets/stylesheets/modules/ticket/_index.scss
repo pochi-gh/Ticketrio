@@ -1,6 +1,6 @@
 .wrapper__main{
   width: calc(100% - 300px);
-  background-color: lightcyan;
+  background-color: $main_color;
   .live{
     padding:50px 100px;
     display: flex;
@@ -21,7 +21,7 @@
 
   &__box{
     width:700px;
-    background-color: lightskyblue;
+    background-color: $main_bc;
     font-size: 14px;
     margin: 0 auto 50px;
     border: 0.5px solid rgb(8, 8, 8);

@@ -1,25 +1,26 @@
 .wrapper__side_bar
   .wrapper__side_bar__search
-    %input.wrapper__side_bar__search--area
+    %input{class:"wrapper__side_bar__search--area", placeholder:"アーティスト名を入力"}
   .wrapper__side_bar__result
   .wrapper__side_bar__main
     .wrapper__side_bar__main__artist_name
       = @artist.artist_name
     .wrapper__side_bar__main__live
-    -  @lives.each do |artist_concert|
-      .wrapper__side_bar__main__live__box
-        =link_to "", tickets_path(artist_id: artist_concert.artist_id, live_id: artist_concert.live_id)
-        .wrapper__side_bar__main__live__box--upper
-          .wrapper__side_bar__main__live__box--upper__title
-            = artist_concert.live.title
-        .wrapper__side_bar__main__live__box--middle
-          .wrapper__side_bar__main__live__box--middle__date
-            = artist_concert.live.data.strftime("%Y/%m/%d")
-          .wrapper__side_bar__main__live__box--middle__time
-            = artist_concert.live.time.to_s(:time_jp)
-            開演
-        .wrapper__side_bar__main__live__box--lower
-          .wrapper__side_bar__main__live__box--lower__prefectures
-            = artist_concert.live.prefecture.name  
-          .wrapper__side_bar__main__live__box--lower__hall
-            = artist_concert.live.hall
+      - @lives.each do |artist_concert|
+        .wrapper__side_bar__main__live__box
+          .artist_live_box
+            =link_to "", tickets_path(artist_id: artist_concert.artist_id, live_id: artist_concert.live_id)
+            .artist_live_box--upper
+              .artist_live_box--upper__title
+                = artist_concert.live.title
+            .artist_live_box--middle
+              .artist_live_box--middle__date
+                = artist_concert.live.data.strftime("%Y/%m/%d")
+              .artist_live_box--middle__time
+                = artist_concert.live.time.to_s(:time_jp)
+                開演
+            .artist_live_box--lower
+              .artist_live_box--lower__prefectures
+                = artist_concert.live.prefecture.name  
+              .artist_live_box--lower__hall
+                = artist_concert.live.hall

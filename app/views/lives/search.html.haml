@@ -9,9 +9,9 @@
     .wrapper__side_bar__live-data
 
       - if @lives.length >0
-        .wrapper__side_bar__live-data--box 
-          =link_to "","/lives?id=#{@artist.id}"
-          - @lives.each do |live|
+        - @lives.each do |live|
+          .wrapper__side_bar__live-data--box 
+            =link_to "","/lives?id=#{@artist.id}"
             %p.title_label
               公演名
             .title_data
@@ -28,10 +28,11 @@
               - @artists.each do |artist|
                 .artist_name
                   = artist.artist.artist_name
-            = form_with model: @live ,class:"tikect_new__wrapper__form_area" do |form|
-              = form.hidden_field :live_id, value: live.id
-              = form.hidden_field :artist_id, value: @artist.id
-              = form.submit "アーティストを追加 ", class:"live_artist_add_btn"
+
+              = form_with model: @live ,class:"tikect_new__wrapper__form_area" do |form|
+                = form.hidden_field :live_id, value: live.id
+                = form.hidden_field :artist_id, value: @artist.id
+                = form.submit "アーティストを追加 ", class:"live_artist_add_btn"
       - else
         .wrapper__side_bar__live-data--nil
           %p コンサート情報が見つかりません。
