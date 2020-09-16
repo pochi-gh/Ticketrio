@@ -1,0 +1,42 @@
+=render "template/header"
+.wrapper
+  .tikect_show__wrapper
+    %h2.tikect_show__wrapper--title
+      募集投稿の編集
+    .tikect_show__wrapper--box
+      .tikect_show__wrapper--box__live
+        .tikect_show__wrapper--box__live--title
+          公演名
+          %span.tikect_show__wrapper--box__live--title--data
+            = @ticket.live.title
+      .tikect_show__wrapper--box__live-day
+        開催日時
+        %span.tikect_show__wrapper--box__live-day--data
+          = @ticket.live.data.strftime("%Y/%m/%d")
+          = @ticket.live.time.to_s(:time_jp)
+        %span.tikect_show__wrapper--box__live-day--hall
+          会   場
+        %span.tikect_show__wrapper--box__live-day--hall-data
+          = @ticket.live.prefecture.name
+          = @ticket.live.hall
+      = form_with model: @ticket ,class:"tikect_show__wrapper__form_area" do |form|
+        .tikect_show__wrapper__form_area--seat
+          = form.label "座席情報"
+          = form.text_field :seat, placeholder:"座席詳細を入力",class:"tikect_show__wrapper__form_area--seat-form"
+        .tikect_show__wrapper__form_area--ticket_info
+          .tikect_show__wrapper__form_area--ticket_info--left
+            = form.label "枚  数"
+            = form.number_field :piece, min:0,class:"ticket_info--left--piece-form"
+            枚
+          .tikect_show__wrapper__form_area--ticket_info--right
+            = form.label "価格"
+            = form.number_field :price, min:0, placeholder:"1枚あたりの金額",class:"ticket_info--left--price-form"
+            円/枚
+        .tikect_show__wrapper__form_area--text
+          = form.label "詳細情報",class:"ticket_text-form"
+          .tikect_show__wrapper__form_area--text--form
+            = form.text_area :text, rows:"3",placeholder:"詳細情報を入力",class:"text_form_area"
+        = form.hidden_field :live_id, value: @ticket.live.id
+        = form.hidden_field :user_id, value: current_user.id
+
+        = form.submit "編    集", class:"tikect_show__wrapper__form_area--btn"

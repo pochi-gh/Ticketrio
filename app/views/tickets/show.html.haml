@@ -14,8 +14,8 @@
         = @ticket.user.name
       - if user_signed_in? && @ticket.user.id == current_user.id 
         .user-info-crrent
-          =link_to "編集",""
-          =link_to "削除",""
+          =link_to "編集", edit_ticket_path(@ticket.id)
+          =link_to "削除", "/tickets/#{@ticket.id}", method: :delete
     .wrapper__show__box--artist-info
       %span.wrapper__show__box--artist-info--title
         公演名
