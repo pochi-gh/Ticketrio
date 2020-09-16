@@ -1,17 +1,24 @@
 .wrapper__main{
   width: calc(100% - 300px);
   background-color: lightcyan;
-  padding-top: 70px;
-  a{
-    text-decoration: none;
-    color:#4169e1;
+  .live{
+    padding:50px 100px;
+    display: flex;
+    &_info{
+
+    }
+    a{
+      text-decoration: none;
+      color:#4169e1;
+    }
+    .new_ticket_btn{
+      padding:20px 0 0 300px;
+      display: block;
+      margin-bottom:30px;
+    }
   }
-  .new_ticket_btn{
-    padding-left:100px;
-    width: calc(100% - 300px);
-    display: block;
-    margin-bottom:30px;
-  }
+
+
   &__box{
     width:700px;
     background-color: lightskyblue;
@@ -19,7 +26,7 @@
     margin: 0 auto 50px;
     border: 0.5px solid rgb(8, 8, 8);
     position: relative;
-    border-radius: 20px;
+    border-radius: 10px;
     a{
       position:absolute;
       top: 0;
@@ -39,41 +46,6 @@
       &--user-name-title{
         font-weight: bold;
         padding: 0 10px 0 50px;
-      }
-    }
-    &--artist-info{
-      height: 40px;
-      line-height: 40px;
-      border-bottom:0.5px solid rgb(8, 8, 8);
-      padding-left:10px;
-      &--title{
-        font-weight: bold;
-        padding-right: 10px;
-      }
-    }
-    &--live-info{
-      height: 40px;
-      line-height: 40px;
-      border-bottom:0.5px solid rgb(8, 8, 8);
-      padding-left:10px;
-      &-title{
-        font-weight: bold;
-        padding-right: 10px;
-        &-date{
-
-        }
-        &-time{
-        }
-      }
-      &__stage{
-        padding-left:100px;
-        font-weight: bold;
-        &__prefecture{
-          padding-left:10px;
-        }
-        &__hall{
-          padding-left: 20px;
-        }
       }
     }
     &--seat{

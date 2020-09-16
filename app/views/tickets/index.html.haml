@@ -2,8 +2,21 @@
 .wrapper
   =render "template/sidebar"
   .wrapper__main
-    = link_to "チケットの新規募集投稿",new_ticket_path(artist_id: params[:artist_id] ,live_id: params[:live_id]),class:"new_ticket_btn"
-    
+    .live
+      .live_info
+        .live_info__artist
+          = @artist.artist_name
+        .live_info__title
+          = @live.title
+          = @live.data.strftime("%Y/%m/%d")
+          = @live.time.to_s(:time_jp)
+          開演
+        .live_info__title
+          = @live.prefecture.name
+          = @live.hall
+
+      = link_to "チケットの新規募集投稿",new_ticket_path(artist_id: params[:artist_id] ,live_id: params[:live_id]),class:"new_ticket_btn"
+
     - @tickets.each do |ticket|
       .wrapper__main__box
         = link_to "", ticket_path(ticket.id)
@@ -16,24 +29,6 @@
             投稿者 
           %span.wrapper__main__box--user-info--user-name-data
             = ticket.user.name
-        .wrapper__main__box--artist-info
-          %span.wrapper__main__box--artist-info--title
-            公演名
-          %span.wrapper__main__box--artist-info--name
-            = ticket.live.title
-        .wrapper__main__box--live-info
-          %span.wrapper__main__box--live-info-title
-            公演日時
-          %span.wrapper__main__box--live-info-date-title-data
-            = ticket.live.data.strftime("%Y/%m/%d")
-          %span.wrapper__main__box--live-info-date-title-time
-            = ticket.live.time.to_s(:time_jp)
-          %span.wrapper__main__box--live-info__stage
-            会場
-          %span.wrapper__main__box--live-info__stage__prefecture
-            = ticket.live.prefecture.name  
-          %span.wrapper__main__box--live-info__stage__hall
-            = ticket.live.hall
         .wrapper__main__box--seat
           %span.wrapper__main__box--seat-area
             座席
@@ -49,8 +44,7 @@
           %span.wrapper__main__box--seat-price-data
             = ticket.price
             円/枚
-        .wrapper__main__box--comment
-          = ticket.text
+
 
 
 
