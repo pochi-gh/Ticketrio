@@ -11,11 +11,13 @@ class ArtistsController < ApplicationController
 
   def new
     @artist = Artist.new
+    
   end
 
   def create
     @artist = Artist.new(artist_params)
     if @artist.save
+      flash[:notice] = 'アーティストの追加が完了しました'
       redirect_to "/artists"
     else
       render :new
