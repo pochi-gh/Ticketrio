@@ -1,0 +1,11 @@
+=render "template/header"
+.wrapper
+  .comment_show_wrapper
+    %h2.comment_show_wrapper--title
+      コメントの編集
+    .comment_show_wrapper--box
+      = form_with(model: [@ticket,@comment], local: true) do |f|
+        = f.text_area :text, rows: 5, class:'comment_form', placeholder:"コメントを入力してください。"
+        = f.submit "編    集", class:"comment_form-btn"
+
+    

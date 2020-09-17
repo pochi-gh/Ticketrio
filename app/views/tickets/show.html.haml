@@ -68,7 +68,7 @@
             -if user_signed_in? && comment.user.id == current_user.id
               %span.wrapper__show__comments__area--box__btn
                 %span.wrapper__show__comments__area--box__btn--edit
-                  =link_to "編集","#"
+                  =link_to "編集","/tickets/#{@ticket.id}/comments/#{comment.id}/edit"
                 %span.wrapper__show__comments__area--box__btn--delete
                   =link_to "削除","#"
             %p.wrapper__show__comments__area--box__text
