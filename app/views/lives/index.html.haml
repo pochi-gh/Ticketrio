@@ -32,15 +32,17 @@
   .wrapper__live__add
     .wrapper__live__add--area
       .wrapper__live__add--area--title
-      -if user_signed_in?
-        %p コンサート情報の検索
-        = form_with url: search_lives_path ,class:'live_add--form',method: "get", local:"ture"  do |form|
-          = form.label "日付"
-          = form.date_select :data, use_month_numbers: true, class:"date_form"
-          = form.time_select :time, ignore_data:true, class:"time_form"
-          = form.label "開演"
-          .live_add_lower
-            = form.label "開催地"
-            = form.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "---", class: 'prefecture_form'
-            = form.hidden_field :artist_id, value:@artist.id
-            = form.submit "検 索", class:"submit_btn"
+
+      %p コンサート情報の検索
+      = form_with url: search_lives_path ,class:'live_add--form',method: "get", local:"ture"  do |form|
+        = form.label "日付"
+        = form.date_select :data, use_month_numbers: true, class:"date_form"
+        = form.time_select :time, ignore_data:true, class:"time_form"
+        = form.label "開演"
+        .live_add_lower
+          = form.label "開催地"
+          = form.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "---", class: 'prefecture_form'
+          = form.hidden_field :artist_id, value:@artist.id
+          = form.submit "検 索", class:"submit_btn"
+
+        
