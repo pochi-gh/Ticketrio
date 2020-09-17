@@ -25,7 +25,7 @@
         %span.tikect_new__wrapper--box__live-day--hall-data
           = @live.prefecture.name
           = @live.hall
-      = form_with model: @ticket ,class:"tikect_new__wrapper__form_area" do |form|
+      = form_with model: @ticket ,class:"tikect_new__wrapper__form_area",local:true do |form|
         .tikect_new__wrapper__form_area--seat
           = form.label "座席情報"
           = form.text_field :seat, placeholder:"座席詳細を入力",class:"tikect_new__wrapper__form_area--seat-form"

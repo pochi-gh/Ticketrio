@@ -12,17 +12,18 @@ class TicketsController < ApplicationController
     @artist = Artist.find(params[:artist_id])
     @live = Live.find(params[:live_id])
     @ticket = Ticket.new
-    @lives = ArtistConcert.where(artist_id: 
-    params[:artist_id]).includes(:live).where('data >= ?', Date.today).order("lives.data ASC")
+    @lives = ArtistConcert.where(artist_id: params[:artist_id]).includes(:live).where('data >= ?', Date.today).order("lives.data ASC")
   end
 
   def create
     @ticket = Ticket.new(ticket_params)
     @artist = Artist.find(artist_params[:artist_id])
     if @ticket.save
+      flash[:notice] = '募集投稿が完了しました。'
       redirect_to "/tickets?artist_id=#{@artist.id}&live_id=#{@ticket.live.id}"
     else
-      render :new
+      flash[:alert] = '投稿に失敗しました。入力情報に漏れがあります'
+      redirect_to "/tickets?artist_id=#{@artist.id}&live_id=#{@ticket.live.id}"
     end
   end
 

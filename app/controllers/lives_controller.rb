@@ -26,16 +26,20 @@ class LivesController < ApplicationController
       if @live.save
         @concert = ArtistConcert.new(artist_id: artist_params[:artist_id], live_id: @live.id)
         @concert.save
+        flash[:notice] = 'ライブ情報を追加しました'
         redirect_to "/lives?id=#{artist_params[:artist_id]}"
       else
-        render :new
+        flash[:alert] = '入力情報に漏れがあります'
+        redirect_to "/lives?id=#{artist_params[:artist_id]}"
       end
     else
       @concert = ArtistConcert.new(artist_id: search_params[:artist_id], live_id: search_params[:live_id])
       if @concert.save
+        flash[:notice] = 'ライブ情報を追加しました'
         redirect_to "/lives?id=#{artist_params[:artist_id]}"
       else
-        render :search
+        flash[:alert] = '入力情報に漏れがあります'
+        redirect_to "/lives?id=#{artist_params[:artist_id]}"
       end
     end
   end
