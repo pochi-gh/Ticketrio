@@ -20,6 +20,7 @@ class ArtistsController < ApplicationController
       flash[:notice] = 'アーティストの追加が完了しました'
       redirect_to "/artists"
     else
+      flash.now[:alert] = '既に登録済みのアーティストか、空欄です。'
       render :new
     end
   end
@@ -28,6 +29,7 @@ class ArtistsController < ApplicationController
   def artist_params
     params.require(:artist).permit(:artist_name)
   end
+  
   def move_to_signup
     redirect_to new_user_registration_path unless user_signed_in?
   end

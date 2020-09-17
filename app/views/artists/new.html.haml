@@ -2,7 +2,7 @@
 .wrapper
   .wrapper__side_bar
     .wrapper__side_bar__search
-      = form_with model: @artist  do |form|
+      = form_with model: @artist, local: true  do |form|
         = form.label "アーティスト名",class:"artist__add--label"
         = form.text_field :artist_name, class:"artist__add--data"
         = form.submit "登     録",class:"artist__add--btn"
