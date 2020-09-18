@@ -55,6 +55,7 @@
     }
     &__post{
       padding:30px 0 ;
+      background-color: $main_bc;
       &--header{
         width:700px;
         margin: 0 auto;
@@ -83,7 +84,10 @@
       }
     }
     &__comment{
+      background-color: $main_bc;
       padding:30px 0 ;
+      height: calc(100vh - 220px);
+      overflow-y: scroll;
       &--header{
         width:700px;
         margin: 0 auto;

@@ -14,7 +14,7 @@ class LivesController < ApplicationController
   def search
     params[:data] = new_data
     params[:time] = new_time
-    @lives = Live.where(data: params[:data],time: params[:time], prefecture_id: live_search_params[:prefecture_id])
+    @lives = Live.where(data: params[:data],time: params[:time], prefecture_id: params[:prefecture_id])
     @artist = Artist.find(params[:artist_id])
     @live = Live.new
   end
@@ -51,10 +51,6 @@ class LivesController < ApplicationController
 
   def artist_params
     params.require(:live).permit(:artist_id)
-  end
-
-  def live_search_params
-    params.permit(:data, :time, :prefecture_id, :artist_id)
   end
 
   def search_params
