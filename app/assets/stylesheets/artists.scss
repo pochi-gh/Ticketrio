@@ -2,6 +2,10 @@ body {
   font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic'  
   }
 
+  a{
+    text-decoration: none;
+    color:#4169e1;
+  }
 .header{
   display: flex;
   height: 100px;
@@ -47,7 +51,6 @@ body {
     border-right:0.5px solid #333;
     &__search{
       width:100%;
-
       padding: 40px 0 ;
       &--area{
         display: block;
@@ -67,23 +70,15 @@ body {
       font-size: 12px;
       line-height: 30px;
       overflow-y:scroll;
-      a{
-        text-decoration: none;
-        color:#4169e1;
-      }
       .login__announce{
         font-size:10px;
       }
     }
     &__main{
-  
       &__artist_name{
         padding:20px 40px;
       }
-      a{
-        text-decoration: none;
-        color:#4169e1;
-      }
+
       .live_add{
         margin-left:40px;
       }
