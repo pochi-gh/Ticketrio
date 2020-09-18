@@ -35,7 +35,7 @@ body {
   }
 }
 .wrapper{
-  height: calc(100vh - 100px);
+  height: calc(100vh - 110px);
   width: 100vw;
   display: flex;
   border-top:0.5px solid #333;
@@ -86,6 +86,10 @@ body {
       }
       .live_add{
         margin-left:40px;
+      }
+      .paginate{
+        padding:0 0 5px 40px;
+        font-size:14px;
       }
       &__live{
         p{

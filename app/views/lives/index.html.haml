@@ -6,7 +6,10 @@
         = @artist.artist_name
         
       .wrapper__side_bar__main__live
+ 
         -if @lives.present?
+          .paginate
+            = paginate(@lives)
           - @lives.each do |artist_concert|
             .wrapper__side_bar__main__live__box
               .artist_live_box

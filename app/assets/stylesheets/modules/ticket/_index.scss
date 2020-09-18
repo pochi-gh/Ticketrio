@@ -1,6 +1,7 @@
 .wrapper__main{
   width: calc(100% - 300px);
   background-color: $main_color;
+  overflow-y: scroll;
   .live{
     padding:50px 100px;
     display: flex;
@@ -17,7 +18,10 @@
       margin-bottom:30px;
     }
   }
-
+    .paginate{
+      width:700px;
+      margin: 0 auto 5px;
+    }
 
   &__box{
     width:700px;

@@ -1,7 +1,7 @@
 class TicketsController < ApplicationController
 
   def index
-    @tickets = Ticket.where(live_id: params[:live_id])
+    @tickets = Ticket.where(live_id: params[:live_id]).order("created_at DESC").page(params[:page]).per(10)
     @live = Live.find(params[:live_id])
     @artist = Artist.find(params[:artist_id])
     @lives = ArtistConcert.where(artist_id: params[:artist_id]).includes(:live).where('data >= ?', Date.today).order("lives.data ASC")
