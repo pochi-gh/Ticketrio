@@ -6,11 +6,11 @@ class UsersController < ApplicationController
   end
 
   def posts
-    @tickets = Ticket.where(user_id: params[:id])
+    @tickets = Ticket.where(user_id: params[:id]).page(params[:page]).per(5)
   end
 
   def comment
-    @comments = Comment.where(user_id: params[:id])
+    @comments = Comment.where(user_id: params[:id]).order("updated_at DESC").page(params[:page]).per(5)
   end
 
   def message

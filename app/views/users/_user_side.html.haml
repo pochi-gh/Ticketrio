@@ -1,8 +1,11 @@
 .warapper__user_show
   .warapper__user_show__side_bar
-    .warapper__user_show__side_bar__post
-      = link_to "投稿中のチケット一覧", posts_user_path
-    .warapper__user_show__side_bar__comment
-      = link_to "コメントしたチケット一覧", comment_user_path
-    .warapper__user_show__side_bar__message
-      = link_to "メッセージ一覧",message_user_path
+    %ul.side_bar
+      %li.side_bar__post
+        = link_to "投稿中のチケット一覧", posts_user_path
+      %li.side_bar__comment
+        = link_to "コメントしたチケット一覧", comment_user_path
+      -# %li.side_bar__message
+      -#   = link_to "メッセージ一覧",message_user_path
+
+        <%= paginate(@comments) %>

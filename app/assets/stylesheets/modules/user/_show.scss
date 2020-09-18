@@ -38,23 +38,43 @@
   }
 
 .warapper__user_show{
-  display: flex;
-  &__side_bar{
-    width: 300px;
-    height:calc(100vh - 100px);
-    background-color: khaki;
-  }
-  
   &__main{
-    width: calc(100% - 300px);
-    background-color: lightcyan;
-    padding-top: 100px;
+    background-color: $main_color;
+    .content{
+      height: 60px;
+      display: flex;
+      justify-content: space-between;
+      line-height: 60px;
+      width: 600px;
+      margin: 0 auto;
+      a{
+        text-decoration: none;
+        color:$sub_blue;
+
+      }
+    }
     &__post{
+      padding:30px 0 ;
+      &--header{
+        width:700px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+      }
+      .paginate{
+        width:700px;
+        margin: 0 auto;
+        padding-bottom:5px;
+      }
       &--ticket{
+        a{
+          text-decoration: none;
+          color:$sub_blue;
+        }
         .post--ticket--edit{
           width:700px;
           margin: 0 auto;
           text-align: right;
+     
         }
         .post--ticket__box{
           @include user_show;
@@ -63,6 +83,17 @@
       }
     }
     &__comment{
+      padding:30px 0 ;
+      &--header{
+        width:700px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+      }
+      .paginate{
+        width:700px;
+        margin: 0 auto;
+        padding-bottom:5px;
+      }
       &--ticket{
         .comment--ticket__box{
           @include user_show;
