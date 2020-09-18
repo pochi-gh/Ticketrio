@@ -29,6 +29,17 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    comment = Comment.find(params[:id])
+    if comment.destroy
+      flash[:notice] = 'コメントを削除しました。'
+      redirect_to ticket_path(params[:ticket_id])
+    else
+      flash[:alert] = 'コメントの削除に失敗しました。'
+      redirect_to ticket_path(params[:ticket_id])
+    end
+
+  end
 
 
   private

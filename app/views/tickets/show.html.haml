@@ -70,7 +70,7 @@
                 %span.wrapper__show__comments__area--box__btn--edit
                   =link_to "編集","/tickets/#{@ticket.id}/comments/#{comment.id}/edit"
                 %span.wrapper__show__comments__area--box__btn--delete
-                  =link_to "削除","#"
+                  =link_to "削除","/tickets/#{@ticket.id}/comments/#{comment.id}", method: :delete
             %p.wrapper__show__comments__area--box__text
               = comment.text
 

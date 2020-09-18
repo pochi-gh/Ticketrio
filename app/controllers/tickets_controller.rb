@@ -48,6 +48,7 @@ class TicketsController < ApplicationController
   def destroy
     ticket = Ticket.find(params[:id])
     ticket.destroy
+    flash[:notice] = 'チケット募集の投稿を削除しました。'
     redirect_to root_path
   end
 
