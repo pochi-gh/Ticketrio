@@ -1,10 +1,10 @@
-# README
+# アプリ名
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ticketrio
 
-Things you may want to cover:
+##概要
 
+ライブチケット交換掲示板
 * Ruby version
 
 * System dependencies
