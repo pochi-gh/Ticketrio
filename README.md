@@ -17,10 +17,14 @@ Ticketrio
 　<img width="770" alt="スクリーンショット 2020-09-20 16 54 41" src="https://user-images.githubusercontent.com/63763161/93706538-45860800-fb62-11ea-90fa-07cf5e4b3d0a.png">
  
 　<アーティスト検索及び追加><br>
-![artist](https://user-images.githubusercontent.com/63763161/93707562-c3e6a800-fb6a-11ea-92c8-6888f83a8af7.gif)
+  １）inputフォームからアーティスト名を曖昧検索し、テーブルに該当データがなければ、<p>
+ 　　追加画面のメッセージが表示されます。
+    ![artist](https://user-images.githubusercontent.com/63763161/93707562-c3e6a800-fb6a-11ea-92c8-6888f83a8af7.gif)
 
 　<各アーティストのライブ情報及び該当のチケット募集一覧の遷移><br>
- ![live info](https://user-images.githubusercontent.com/63763161/93709267-02369400-fb78-11ea-8b2e-e6a701440bd0.gif)
+   １）検索したアーティスト名をクリックするとアーティストのライブ情報が表示され、<br>
+　　さらにライブ名をクリックすると投稿済みの募集チケット情報が表示されます。
+     ![live info](https://user-images.githubusercontent.com/63763161/93709267-02369400-fb78-11ea-8b2e-e6a701440bd0.gif)
 
  
  
