@@ -16,8 +16,8 @@ Ticketrio
 　<チケット譲渡募集><br>
 　<img width="770" alt="スクリーンショット 2020-09-20 16 54 41" src="https://user-images.githubusercontent.com/63763161/93706538-45860800-fb62-11ea-90fa-07cf5e4b3d0a.png">
  
-　<アーティスト検索画面><br>
-![artist_sarch](https://user-images.githubusercontent.com/63763161/93707381-07401700-fb69-11ea-9fec-afc531fafda5.gif)
+　<アーティスト検索及び追加><br>
+![artist](https://user-images.githubusercontent.com/63763161/93707562-c3e6a800-fb6a-11ea-92c8-6888f83a8af7.gif)
 
 　<募集チケットに関してのやりとり><br>
  
