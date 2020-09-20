@@ -11,7 +11,7 @@
       - if @lives.length >0
         - @lives.each do |live|
           .wrapper__side_bar__live-data--box 
-            =link_to "","/lives?id=#{@artist.id}"
+            =link_to "","/tickets?artist_id=#{@artist.id}&live_id=#{live.id}"
             %p.title_label
               公演名
             .title_data
@@ -28,7 +28,6 @@
               - @artists.each do |artist|
                 .artist_name
                   = artist.artist.artist_name
-
               = form_with model: @live ,class:"tikect_new__wrapper__form_area" do |form|
                 = form.hidden_field :live_id, value: live.id
                 = form.hidden_field :artist_id, value: @artist.id
