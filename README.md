@@ -39,3 +39,7 @@ Ticketrio
 ###### 1)サイドバーよりライブ情報をクリックすると募集投稿されている一覧が表示されます。
 ###### 　投稿をクリックすることで、詳細ページへ遷移することができます。
 ![commentまで](https://user-images.githubusercontent.com/63763161/93712431-d1af2400-fb90-11ea-9bd6-1c68ed986f9c.gif)
+###### 2)新規投稿ボタンより、新規での募集投稿を追加することができます。
+###### 　投稿後画面は、最新投稿が1番上に投稿されるようになっております。
+![ticketadd](https://user-images.githubusercontent.com/63763161/93712900-99f5ab80-fb93-11ea-92ab-984a8896feb1.gif)
+
