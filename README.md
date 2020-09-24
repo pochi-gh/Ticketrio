@@ -6,12 +6,12 @@ Ticketrio
 ライブチケット掲示板
 
 ## 開発環境
-■言語： Ruby, 
-■バージョン管理：Git, SVNなど
-■リポジトリ管理：SourceTree
-■フレームワーク：ruby on reils
-■フロントエンド：HTML, CSS, JavaScript
-■DB： MySQL
+■言語： Ruby　<br>
+■バージョン管理：Github　<br>
+■リポジトリ管理：Github　<br>
+■フレームワーク：ruby on reils<br>
+■フロントエンド：HTML, CSS, JavaScript<br>
+■DB： MySQL<br>
 
 
 ## 背景
