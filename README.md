@@ -6,10 +6,13 @@ Ticketrio
 ライブチケット掲示板
 
 ## 開発環境
-ruby<p>
-ruby on reils<p>
-devise<p>
-kaminari<p>
+■言語： Ruby, 
+■バージョン管理：Git, SVNなど
+■リポジトリ管理：SourceTree
+■フレームワーク：ruby on reils
+■フロントエンド：HTML, CSS, JavaScript
+■DB： MySQL
+
 
 ## 背景
 知人と行くはずだったライブに知人がいけなくなり、チケットが余ってしまいました。
